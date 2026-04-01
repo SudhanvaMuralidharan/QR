@@ -28,7 +28,7 @@ export default function Ticket({ reg, index, isScannedView }) {
   // Notice we use highly compressed 't' instead of 'ticket'
   const qrData = `${baseUrl}?t=${compressTicket(reg)}`;
   const eventName = cleanEventName(reg['EVENT NAME'])
-  const festName = reg['Group Name'] || 'EVENT'
+  const festName = 'LUMINUS TECH FEST'
   const txnRef = String(reg['Transaction Ref No'] || '')
   const shortRef = txnRef.slice(-10)
 
