@@ -1,0 +1,175 @@
+.app {
+  min-height: 100vh;
+  background: #0a0a0f;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ambient background glows */
+.bgGlow1 {
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(245, 166, 35, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgGlow2 {
+  position: fixed;
+  bottom: -100px;
+  right: -100px;
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(232, 57, 90, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 80px;
+}
+
+/* ── ERROR BANNER ── */
+.errorBanner {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 14px 20px;
+  background: rgba(232, 57, 90, 0.1);
+  border: 1px solid rgba(232, 57, 90, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #ff7a96;
+  position: relative;
+  z-index: 1;
+}
+
+.errorBanner span:last-of-type {
+  flex: 1;
+}
+
+.errorBanner button {
+  background: transparent;
+  border: none;
+  color: #ff7a96;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.errorBanner button:hover {
+  background: rgba(232, 57, 90, 0.15);
+}
+
+/* ── LOADING ── */
+.loadingWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 100px 24px;
+  color: #8888aa;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #2a2a3d;
+  border-top-color: #f5a623;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── TICKETS AREA ── */
+.ticketsArea {
+  max-width: 1200px;
+  margin: 28px auto 0;
+  padding: 0 24px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: #55556a;
+}
+
+.titleLine {
+  flex: 1;
+  height: 1px;
+  background: #1e1e2e;
+}
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+/* ── NO RESULTS ── */
+.noResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 80px 24px;
+  color: #55556a;
+}
+
+.noResultsIcon {
+  font-size: 48px;
+  filter: grayscale(1);
+  opacity: 0.4;
+}
+
+.noResults p {
+  font-size: 16px;
+}
+
+.clearBtn {
+  background: transparent;
+  border: 1px solid #2a2a3d;
+  color: #8888aa;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+
+.clearBtn:hover {
+  border-color: #f5a623;
+  color: #f5a623;
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

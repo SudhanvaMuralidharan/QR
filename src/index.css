@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Space+Mono:wght@400;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #0a0a0f;
+  color: #f0f0ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── PRINT STYLES ── */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .tickets-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12mm !important;
+  }
+
+  .ticket {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+
+  .ticket-top-bar {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .qr-frame {
+    box-shadow: none !important;
+  }
+}
